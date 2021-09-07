@@ -10,7 +10,7 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          Wselcom to Kaito-Blog!!222
+          Wselcom to Kaito-Blogだお
         </h1>
 
         <p className="description">
