@@ -8,7 +8,7 @@ export default function BlogId({ blog }) {
       <p>{blog.publishedAt}</p>
       <div
         dangerouslySetInnerHTML={{
-          __html: `${blog.body}`,
+          __html: `${blog.content}`,
         }}
       />
     </main>
@@ -26,7 +26,7 @@ export const getStaticPaths = async () => {
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const data = await client.get({ endpoint: "blog", contentId: id });
+  const data = await client.get({ endpoint: "news", contentId: id });
 
   return {
     props: {
