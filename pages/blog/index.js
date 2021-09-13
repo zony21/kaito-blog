@@ -3,6 +3,15 @@ import Link from 'next/link'
 import Layout, { siteTitle } from '../../components/layout'
 import utilStyles from '../../styles/utils.module.css'
 import { client } from "../../libs/client";
+import { getMenuData } from 'lib/api';
+
+export async function getStaticProps() {
+let menusData = {};
+menusData = await getMenuData(); // 2.でgetMenuData()をapiファイルに記述
+return {
+    props: { props }
+  };
+}
 
 export default function Home({ blog }) {
   return (
