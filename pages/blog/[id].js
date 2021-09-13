@@ -1,8 +1,14 @@
-// pages/blog/[id].js
 import { client } from "../../libs/client";
+import Link from 'next/link'
+import Head from 'next/head'
+import Layout from '../../components/layout'
 
 export default function BlogId({ blog }) {
   return (
+    <Layout>
+    <Head>
+    <title>{blog.title}</title>
+    </Head>
     <main>
       <h1>{blog.title}</h1>
       <p>{blog.publishedAt}</p>
@@ -12,6 +18,7 @@ export default function BlogId({ blog }) {
         }}
       />
     </main>
+    </Layout>
   );
 }
 
